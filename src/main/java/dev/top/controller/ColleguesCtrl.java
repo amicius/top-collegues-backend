@@ -3,7 +3,6 @@ package dev.top.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,22 +26,18 @@ public class ColleguesCtrl {
 	}
 
 	@PatchMapping("/{pseudo}")
-	public ResponseEntity<?> updateResource(@RequestBody String action, @PathVariable("pseudo") String pseudo) {
+	public Collegues updateResource(@RequestBody UtilsCtrl action, @PathVariable("pseudo") String pseudo) {
 		if (this.colleguesRepo.findById(pseudo).isPresent()) {
-			if (action.contains("AIMER")) {
-				this.colleguesRepo.findById(pseudo).get()
-						.setScore(this.colleguesRepo.findById(pseudo).get().getScore() + 10);
-				this.colleguesRepo.flush();
-				return ResponseEntity.ok("resource updated");
-			} else if (action.contains("DETESTER")) {
-				this.colleguesRepo.findById(pseudo).get()
-						.setScore(this.colleguesRepo.findById(pseudo).get().getScore() - 5);
-				this.colleguesRepo.flush();
-				return ResponseEntity.ok("resource updated");
-
+			Collegues temp = this.colleguesRepo.findById(pseudo).get();
+			if (action.getAction() == Avis.AIMER) {
+				temp.setScore(temp.getScore() + 10);
+				return colleguesRepo.save(temp);
+			} else if (action.getAction() == Avis.DETESTER) {
+				temp.setScore(temp.getScore() - 5);
+				return colleguesRepo.save(temp);
 			}
 		}
-		return ResponseEntity.ok("mauvaise action");
+		return null;
 
 	}
 
