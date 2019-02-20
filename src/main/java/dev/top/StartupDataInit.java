@@ -31,7 +31,11 @@ public class StartupDataInit {
 				.save(new Collegues("Aria", 10, "https://myanimelist.cdn-dena.com/images/characters/7/113250.jpg"));
 
 		this.colleguesRepo
-				.save(new Collegues("Tanya", 20, "https://myanimelist.cdn-dena.com/images/characters/11/319996.jpg"));
+				.save(new Collegues("Tanya", 0, "https://myanimelist.cdn-dena.com/images/characters/11/319996.jpg"));
+		this.colleguesRepo
+				.save(new Collegues("Minami", 5, "https://myanimelist.cdn-dena.com/images/characters/9/82468.jpg"));
+		this.colleguesRepo
+				.save(new Collegues("Yuuki", 0, "https://myanimelist.cdn-dena.com/images/characters/4/278171.jpg"));
 
 	}
 }

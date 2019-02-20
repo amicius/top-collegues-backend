@@ -40,11 +40,11 @@ public class Collegues {
 		this.score = score;
 	}
 
-	public String getImageUrl() {
+	public String getPhotoUrl() {
 		return photoUrl;
 	}
 
-	public void setImageUrl(String photoUrl) {
+	public void setPhotoUrl(String photoUrl) {
 		this.photoUrl = photoUrl;
 	}
 
