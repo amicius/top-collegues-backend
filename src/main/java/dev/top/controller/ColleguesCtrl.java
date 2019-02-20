@@ -28,17 +28,19 @@ public class ColleguesCtrl {
 
 	@PatchMapping("/{pseudo}")
 	public ResponseEntity<?> updateResource(@RequestBody String action, @PathVariable("pseudo") String pseudo) {
-		if (action.equals("AIMER")) {
-			this.colleguesRepo.findById(pseudo).get()
-					.setScore(this.colleguesRepo.findById(pseudo).get().getScore() + 10);
-			this.colleguesRepo.flush();
-			return ResponseEntity.ok("resource updated");
-		} else if (action.equals("DETESTER")) {
-			this.colleguesRepo.findById(pseudo).get()
-					.setScore(this.colleguesRepo.findById(pseudo).get().getScore() - 5);
-			this.colleguesRepo.flush();
-			return ResponseEntity.ok("resource updated");
+		if (this.colleguesRepo.findById(pseudo).isPresent()) {
+			if (action.contains("AIMER")) {
+				this.colleguesRepo.findById(pseudo).get()
+						.setScore(this.colleguesRepo.findById(pseudo).get().getScore() + 10);
+				this.colleguesRepo.flush();
+				return ResponseEntity.ok("resource updated");
+			} else if (action.contains("DETESTER")) {
+				this.colleguesRepo.findById(pseudo).get()
+						.setScore(this.colleguesRepo.findById(pseudo).get().getScore() - 5);
+				this.colleguesRepo.flush();
+				return ResponseEntity.ok("resource updated");
 
+			}
 		}
 		return ResponseEntity.ok("mauvaise action");
 
