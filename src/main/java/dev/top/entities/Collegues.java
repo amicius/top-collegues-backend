@@ -11,17 +11,17 @@ public class Collegues {
 
 	private Integer score;
 
-	private String imageUrl;
+	private String photoUrl;
 
 	public Collegues() {
 		super();
 	}
 
-	public Collegues(String pseudo, Integer score, String imageUrl) {
+	public Collegues(String pseudo, Integer score, String photoUrl) {
 		super();
 		this.pseudo = pseudo;
 		this.score = score;
-		this.imageUrl = imageUrl;
+		this.photoUrl = photoUrl;
 	}
 
 	public String getPseudo() {
@@ -41,11 +41,11 @@ public class Collegues {
 	}
 
 	public String getImageUrl() {
-		return imageUrl;
+		return photoUrl;
 	}
 
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+	public void setImageUrl(String photoUrl) {
+		this.photoUrl = photoUrl;
 	}
 
 }
