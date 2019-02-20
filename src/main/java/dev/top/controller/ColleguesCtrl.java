@@ -40,7 +40,7 @@ public class ColleguesCtrl {
 			return ResponseEntity.ok("resource updated");
 
 		}
-		return (ResponseEntity<?>) ResponseEntity.badRequest();
+		return ResponseEntity.ok("mauvaise action");
 
 	}
 
