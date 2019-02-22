@@ -5,7 +5,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import dev.top.entities.Collegues;
+import dev.top.entities.Collegue;
 import dev.top.entities.Version;
 import dev.top.repos.ColleguesRepo;
 import dev.top.repos.VersionRepo;
@@ -28,24 +28,24 @@ public class StartupDataInit {
 		this.versionRepo.save(new Version("v4"));
 
 		this.colleguesRepo
-				.save(new Collegues("Aria", 0, "https://myanimelist.cdn-dena.com/images/characters/7/113250.jpg"));
+				.save(new Collegue("Aria", 0, "https://myanimelist.cdn-dena.com/images/characters/7/113250.jpg"));
 
 		this.colleguesRepo
-				.save(new Collegues("Tanya", 0, "https://myanimelist.cdn-dena.com/images/characters/11/319996.jpg"));
+				.save(new Collegue("Tanya", 0, "https://myanimelist.cdn-dena.com/images/characters/11/319996.jpg"));
 		this.colleguesRepo
-				.save(new Collegues("Minami", 0, "https://myanimelist.cdn-dena.com/images/characters/9/82468.jpg"));
+				.save(new Collegue("Minami", 0, "https://myanimelist.cdn-dena.com/images/characters/9/82468.jpg"));
 		this.colleguesRepo
-				.save(new Collegues("Yuuki", 0, "https://myanimelist.cdn-dena.com/images/characters/4/278171.jpg"));
+				.save(new Collegue("Yuuki", 0, "https://myanimelist.cdn-dena.com/images/characters/4/278171.jpg"));
 		this.colleguesRepo.save(
-				new Collegues("Tatsumaki", 0, "https://myanimelist.cdn-dena.com/images/characters/16/296299.jpg"));
+				new Collegue("Tatsumaki", 0, "https://myanimelist.cdn-dena.com/images/characters/16/296299.jpg"));
 		this.colleguesRepo
-				.save(new Collegues("Jeanne", 0, "https://myanimelist.cdn-dena.com/images/characters/2/148927.jpg"));
+				.save(new Collegue("Jeanne", 0, "https://myanimelist.cdn-dena.com/images/characters/2/148927.jpg"));
 		this.colleguesRepo
-				.save(new Collegues("Reki", 0, "https://myanimelist.cdn-dena.com/images/characters/6/148931.jpg"));
+				.save(new Collegue("Reki", 0, "https://myanimelist.cdn-dena.com/images/characters/6/148931.jpg"));
 		this.colleguesRepo
-				.save(new Collegues("Rukia", 0, "https://myanimelist.cdn-dena.com/images/characters/2/78215.jpg"));
+				.save(new Collegue("Rukia", 0, "https://myanimelist.cdn-dena.com/images/characters/2/78215.jpg"));
 		this.colleguesRepo
-				.save(new Collegues("Sarada", 0, "https://myanimelist.cdn-dena.com/images/characters/5/292448.jpg"));
+				.save(new Collegue("Sarada", 0, "https://myanimelist.cdn-dena.com/images/characters/5/292448.jpg"));
 
 	}
 }

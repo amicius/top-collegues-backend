@@ -1,10 +1,10 @@
 package dev.top.entities;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
-@Entity
-public class Collegues {
+@MappedSuperclass
+public class CollegueLight {
 
 	@Id
 	private String pseudo;
@@ -13,11 +13,11 @@ public class Collegues {
 
 	private String photoUrl;
 
-	public Collegues() {
+	public CollegueLight() {
 		super();
 	}
 
-	public Collegues(String pseudo, Integer score, String photoUrl) {
+	public CollegueLight(String pseudo, Integer score, String photoUrl) {
 		super();
 		this.pseudo = pseudo;
 		this.score = score;
